@@ -46,7 +46,12 @@ describe('Park', function() {
     assert.strictEqual(actual, dinosaur2);
   });
 
-  it('should be able to find all dinosaurs of a particular species');
+  it('should be able to find all dinosaurs of a particular species', function () {
+    let localDino = new Dinosaur("species1", "omnivore", 220);
+    park1.addDino(localDino);
+    const actual = park1.findBySpecies("species1");
+    assert.deepStrictEqual(actual, [dinosaur1, localDino]);
+  });
 
   it('should be able to calculate the total number of visitors per day');
 
