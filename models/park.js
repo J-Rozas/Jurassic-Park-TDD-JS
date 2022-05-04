@@ -48,4 +48,10 @@ Park.prototype.totalVisitorsDay = function () {
   return totalVisitors;
 }
 
+Park.prototype.totalVisitorsYear = function () {
+  let totalVisitors = 0;
+
+  return this.totalVisitorsDay() * 365;
+}
+
 module.exports = Park;
